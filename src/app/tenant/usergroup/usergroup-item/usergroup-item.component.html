@@ -1,0 +1,39 @@
+
+    
+
+
+
+
+
+<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+<div class="panel panel-pricing">
+<div class="panel-heading">
+<i class="fa fa-windows"></i>
+<h3>Usergroup -{{index}}</h3>
+</div><!--panel-heading close-->
+<div class="panel-body text-center">
+<p class="p-title">{{UserGroup.name}}</p><!--p-title close-->
+</div><!--panel-body text-center close-->
+<div class="panel-body text-center">
+<p class="p-price">
+	<span *ngFor="let permission of UserGroup.permissions">
+		{{permission.name}}<span class="icon-yes glyphicon glyphicon-ok-circle"></span>
+	</span>
+	</p><!--p-price close-->
+</div><!--panel-body text-center close-->
+<div class="panel-footer">
+<a class="btn sub-btn" href="#">
+	{{UserGroup.description}}</a>
+	<app-authworkflow-usergroup [id]="UserGroup.id"></app-authworkflow-usergroup>
+</div>
+<span *ngIf="editUsergroupClicked">
+	<app-usergroup-edit [usergroup]="UserGroup"></app-usergroup-edit>
+</span>
+<button (click)="usergroupEditModalClicked()">
+<span class="glyphicon glyphicon-plus"></span>
+</button>
+<span *ngIf="deleteUsergroupClicked">
+	<app-usergroup-delete></app-usergroup-delete>
+</span>
+</div><!--panel panel-pricing close-->
+</div><!--col-md-4 col-sm-4 col-xs-12 text-center close-->

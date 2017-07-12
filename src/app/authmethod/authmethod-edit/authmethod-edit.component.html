@@ -1,0 +1,59 @@
+
+<div class="modal fade" [hidden]="hideModal" id="edit_tenant{{pk}}" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal_header_color">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Auth method</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row margin_both">
+          <div class="col-md-12">
+            <div class="row form-group text-center">
+              <span>Are you sure you want to Update !</span>
+            </div>
+            <div class="row form-group">
+              <div class="text-center">
+                <form [formGroup]="AuthForm" class="form-horizontal editForm" (ngSubmit)="update(AuthForm.value,$event)" novalidate>
+  <div class="form-group">
+        <label class="control-label col-md-4" for="name">Name</label>
+        <div class="col-md-4">
+        <input type="text"   id="name" class="form-control"
+               formControlName="name"  >
+        </div>
+         <div class="alert alert-danger" [hidden]="AuthForm.controls.name.untouched || AuthForm.controls.name.valid">Email is required and must be valid</div>
+    
+     </div>  
+   <div class="form-group">
+        <label class="control-label col-md-4" for="description">Description</label>
+        <div class="col-md-4">
+        <input type="description"   id="description" class="form-control"
+               formControlName="description"  >
+               
+        </div>
+    <div class="alert alert-danger" [hidden]="AuthForm.controls.description.untouched || AuthForm.controls.description.valid">Email is required and must be valid</div>
+      
+     </div>   
+    
+     
+        
+           <div class="login-button">
+              <div class="button-row">
+     <button type="submit" md-mini-fab ><md-icon>check</md-icon></button>
+      <button type="button"  md-mini-fab  data-dismiss="modal"><md-icon>cancel</md-icon></button>
+      </div>
+  </div>
+</form>
+                
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="btn customBtn" data-toggle="modal" attr.data-target="#edit_tenant{{pk}}" *ngIf='!lg'>
+  <span class="glyphicon glyphicon-trash">Edit</span>
+</button>

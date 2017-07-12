@@ -1,0 +1,21 @@
+
+<div class="container-fluid">
+<div class="plans col-md-12 col-sm-12 col-xs-12 text-center">
+<h5>Usergroups</h5>
+</div>
+</div><!--container-fluid close-->
+<section>
+<div class="container">
+<div class="row">
+<app-usergroup-item *ngFor="let userGroup of UserGroups | paginate: { itemsPerPage: 4, currentPage: p };let i = index;" [UserGroup]="userGroup" ></app-usergroup-item>
+<div *ngIf="userGroupCreated">
+<app-usergroup-create></app-usergroup-create>
+</div>
+<button class="btn customBtn" data-toggle="modal" (click)="usergroupCreateModalClicked()">
+<span class="glyphicon glyphicon-plus"></span>
+</button>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>  
+</div>
+</div>
+</section>
+

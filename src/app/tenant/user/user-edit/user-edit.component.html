@@ -1,0 +1,75 @@
+<div class="modal fade editUserModal" [hidden]="hideModal" id="edit_user{{pk}}" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal_header_color">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit User</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row margin_both">
+          <div class="col-md-12">
+            <div class="row form-group text-center">
+              <span>Are you sure you want to Update !</span>
+            </div>
+            <div class="row form-group">
+              <div class="text-center">
+                <form [formGroup]="UserForm" class="form-horizontal editForm" (ngSubmit)="update(UserForm.value,$event)" novalidate>
+ 
+   <div class="form-group">
+        <label class="control-label col-md-4" for="username">UserName</label>
+        <div class="col-md-4">
+        <input type="text"   id="username" class="form-control"
+               formControlName="username"  >
+               
+        </div>
+    <div class="alert alert-danger" [hidden]="UserForm.controls.username.untouched || UserForm.controls.username.valid">username is required and must be valid</div>
+       
+     </div>   
+    
+      <div class="form-group ">
+        <label class="control-label col-md-4" for="email">EmailAddress</label>
+      <div class="col-md-4">
+        <input type="email" id="emailAddress" class="form-control"
+               formControlName="emailAddress"  >
+               <div class="alert alert-danger" [hidden]="UserForm.controls.emailAddress.untouched || UserForm.controls.emailAddress.valid">EmailAddress is required and must be valid</div>
+      </div>
+        </div>
+       
+        <div class="form-group ">
+        <label class="control-label col-md-4" for="email">PhoneNumber</label>
+      <div class="col-md-4">
+        <input type="email" id="phoneNumber" class="form-control"
+               formControlName="phoneNumber"  >
+               <div class="alert alert-danger" [hidden]="UserForm.controls.phoneNumber.untouched || UserForm.controls.phoneNumber.valid">PhoneNumber is required and must be valid</div>
+      </div>
+        </div>
+        <div class="form-group ">
+        <label class="control-label col-md-4" for="email">FirstName</label>
+      <div class="col-md-4">
+        <input type="text" id="firstName" class="form-control"
+               formControlName="firstName"  >
+               <div class="alert alert-danger" [hidden]="UserForm.controls.firstName.untouched || UserForm.controls.firstName.valid">FirstName is required and must be valid</div>    </div>
+        </div>
+        <div class="form-group ">
+        <label class="control-label col-md-4" for="email">LastName</label>
+      <div class="col-md-4">
+        <input type="email" id="lastName" class="form-control"
+               formControlName="lastName"  >
+               <div class="alert alert-danger" [hidden]="UserForm.controls.lastName.untouched || UserForm.controls.lastName.valid">lastName is required and must be valid</div>
+      </div>
+        </div>
+           <div class="login-button">
+    <button type="submit"   >Save</button>
+  </div>
+</form>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+               <button id="closeModalButton" [hidden]="true" data-dismiss="modal">Close modal</button>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,78 @@
+
+<!--<li class="list-group-item clearfix">
+<a href="#" role="button" [routerLink]="['/user']" [queryParams]="{tenantId:tenant.id}" >
+<h4 class="list-group-item-heading">{{tenant?.name}}</h4></a>
+      <p class="list-group-item-text">Description : {{tenant?.description}}</p>
+      	<p class="list-group-item-text">EmailAddress : {{tenant?.emailAddress}}
+      	 <span class="pull-right">
+      	<button class="btn btn-primary" (click)="edit(tenant.id)">Edit</button>
+      	<button  class="btn btn-danger" (click)="delete(tenant.id,$event)">Delete</button>
+      	</span>
+      </p>
+      </li> -->
+   
+
+<!--<div class="card-deck ">
+  <div class="card">
+    <div class="card-block">
+      <a href="#" role="button" [routerLink]="['/user']" [queryParams]="{tenantId:tenant.id}" ><h4 class="card-title">{{tenant?.name}}</h4></a>
+      <p class="card-text">Description : {{tenant?.description}}</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">EmailAddress : {{tenant?.emailAddress}}</small>
+    </div>
+  </div>
+</div> -->
+
+
+        <div class="row menu-item">
+                        	<div class="stage">
+                        		<div class="flashcard" appToggleClass>
+                        			<div class="front">
+                        <p class="card-title">{{tenant?.name}}</p>
+                        <div  class="back-content "><span class="label label-danger">EmailAddress</span> {{tenant?.emailAddress}}</div> 
+                          </div>
+                          <div class="back">
+                          	<div  class="back-content "> <a  role="button" (click)="showTenant(tenant.id)" ><p class="btn-enter">click to enter</p></a></div>
+                           
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!--    <div><span class="label label-danger">Description</span></div><div class="back-content ">{{tenant?.description}}</div>
+                             <div  ><span class="label label-danger">EmailAddress</span></div><div  class="back-content "> {{tenant?.emailAddress}}</div> 
+                           <button class="btn btn-primary btn-xs">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                Edit</button>
+                              <app-tenant-edit [tenant]="tenant" [pk]="tenant.id"></app-tenant-edit>  
+
+
+                  <button class="btn btn-success btn-xs">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                     </div>
+        </div>
+    </div>-->
+
+           
+ <!--  <button type="button" class="btn btn-primary" (click)="showChildModal(tenant.id)">Open child modal</button>    
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Child modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-tenant-edit></app-tenant-edit>
+      </div>
+    </div>
+  </div>
+</div>
+          -->
+

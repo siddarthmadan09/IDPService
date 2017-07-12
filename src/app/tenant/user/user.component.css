@@ -1,0 +1,45 @@
+.right{
+  float:right;
+  position: relative;
+}
+
+.roles{
+
+  list-style-type: none;
+
+}
+
+img { margin: 0 auto; }
+
+
+.container{
+   width:100%;
+}
+
+@media (min-width: 400px) {
+  .menuContainer{
+    float:left;
+    margin:0;
+    left:0;
+  }
+  .sidebar-nav .navbar .navbar-collapse {
+        float: left;
+    right:-10px;
+    padding: 0;
+    max-height: none;
+
+  }
+  .sidebar-nav .navbar ul {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    
+    display: block;
+  }
+ .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+}
+

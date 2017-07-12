@@ -1,3 +1,73 @@
-<h1>
-  {{title}}
-</h1>
+
+<header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+
+    <div id="main-nav" class="mdl-layout__header-row mdl-color--primary-dark">
+      <div class="mdl-grid fixed-width">
+        <a class="mdl-layout-title" >IDP Service
+        </a>
+        <div class="mdl-layout-spacer"></div>
+        <div class="">
+          <nav class="mdl-navigation">
+              <a href="http://angularexpo.com/tag/games/" class="mdl-navigation__link  mdl-typography--text-uppercase mdl-typography--font-bold" routerLink="./settings" routerLinkActive="active">Support</a>
+              <a href="http://angularexpo.com/tag/media/" class="mdl-navigation__link  mdl-typography--text-uppercase mdl-typography--font-bold" routerLink="/user" routerLinkActive="active">user</a>
+              <a href="http://angularexpo.com/tag/dashboards/" class="mdl-navigation__link  mdl-typography--text-uppercase mdl-typography--font-bold" routerLink="./login" routerLinkActive="active">Login</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+</header>
+ <div class="row">
+   <div *ngIf="tenantClicked">
+  <div class="col-md-2">
+ <div class="menuContainer" >
+
+ 
+        <nav class="sidebar-nav  nav-side-menu">
+            <div class="navbar" role="navigation">
+       <p>
+
+        <button md-button [mdMenuTriggerFor]="menu">Change Tenant</button>
+           <md-menu #menu="mdMenu" class="mat-menu">
+           <a md-menu-item (click)="navigateTenant()" >Change Tenant</a>
+          </md-menu>
+        </p>
+      
+                <ul class="nav navbar-nav sub-menu" >
+                  
+                  <li><a  role="button" (click)="navigateUser()" ><p class="btn-nav">User</p></a></li>
+                 <li><a role="button" (click)="navigateUserGroup()" ><p class="btn-enter"> usergroups</p></a></li>
+
+                 <li><a  role="button" (click)="navigatePermission()" ><p class="btn-enter">Permissions</p></a></li>
+                 
+                  <li><a  role="button" (click)="navigateAuthMethod()" ><p class="btn-enter">AuthMethods</p></a></li>
+                  <li><a  role="button" (click)="navigateAuthMethodConfig()" ><p class="btn-enter">AuthMethod Config</p></a></li>
+              <li><a  role="button" (click)="navigateAuthWorkflow()" ><p class="btn-enter">AuthWorkflow</p></a></li>
+              <li><a  role="button" (click)="navigateAuthWorkflowUserGroup()" ><p class="btn-enter">AuthWorkflow-usergroup</p></a></li>
+               </ul>
+            </div>
+        </nav>
+     </div>   
+
+
+  </div> 
+</div>
+<div class="col-md-10">
+  <div *ngIf="tenantClicked">
+<app-tenant-detail></app-tenant-detail>
+</div>
+
+
+   <router-outlet></router-outlet>
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+

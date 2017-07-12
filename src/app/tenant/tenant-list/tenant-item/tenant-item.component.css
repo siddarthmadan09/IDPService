@@ -1,0 +1,79 @@
+.stage {
+ -webkit-perspective: 1000;                   /* Sets up your viewpoint for seeing the animation */
+}
+
+.flashcard {
+  height: 75px;  
+  width: 100%;                                             /* Centers the flashcard on the page */
+  border: 1px solid gray;                            /*  Border makes the animation easier to see. */
+  box-shadow: 2px 2px 2px rgb(3,169,244);
+  -webkit-transform-style: preserve-3d;                                 /* Provides 3D perspective. */
+  transition: all 0.3s;                                /* Slows down any transitions (e.g. rotation) */
+  -webkit-transition: all 0.1s;
+
+}
+
+.flipped, .back {
+  transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);                      /* Rotates flashcard div when applied */
+}
+
+.front{
+  position: relative;                    
+  -webkit-backface-visibility: hidden;           /*  Hides back side of text (it's upside down) */
+  height: 10%;                                   /* Stretches side to inhabit full size of flashcard */
+  width: 100%;
+  text-align: center;                                                  
+}
+ .back {
+  margin-top: 22%; 
+  position: relative;                    
+  -webkit-backface-visibility: hidden;           /*  Hides back side of text (it's upside down) */
+  height: 10%;                                  /* Stretches side to inhabit full size of flashcard */
+  width: 100%;
+  text-align: center;                                             
+}
+
+
+.front p{
+                                                         
+  font-size: 20px;
+  background-color: rgb(3,169,244);
+  color:white;
+}
+.btn-enter{
+  background-color: rgb(3,169,244);
+  color:white;
+}
+.back-content{
+  color:rgb(3,169,244);
+  font-weight:700;
+}
+.label-danger{
+   background-color:rgb(3,169,244);
+   font-weight:700;
+}
+.btn-primary{
+  background-color:red;
+  margin-left: 11px;
+    margin-top: 11px;
+     width: 60px;
+    height: 30px;   
+      font-size:14px;
+    font-weight:700;
+}
+.btn-success{
+ background-color:red;
+  margin-left: 11px;
+    margin-top: 11px;
+    width: 60px;
+    height: 30px;   
+    
+    border: none;
+    color: white;   
+    font-size:14px;
+    font-weight:700;
+}
+.menu-item{
+  padding:  5px 0;
+}

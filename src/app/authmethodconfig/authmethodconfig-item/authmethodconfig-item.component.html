@@ -1,0 +1,13 @@
+
+ 
+
+  <accordion-group #group >
+    <div accordion-heading  > {{authmethodconfig?.name}} <i class="pull-right float-xs-right glyphicon"
+         [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+    
+    </div>
+    <p> {{authmethodconfig?.description}} </p>
+   <p>  {{authmethodconfig?.authMethod?.name}}</p>
+    <p> {{authmethodconfig?.authMethod?.description}}</p>
+    <app-authmethodconfig-edit [authmethodconfig]="authmethodconfig" ></app-authmethodconfig-edit>
+  </accordion-group>

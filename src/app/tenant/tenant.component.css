@@ -1,0 +1,30 @@
+.createTenant{
+	position:relative;
+	top:70px;
+}
+.menu-header {
+color: rgb(3,169,244);
+font-family: Impact, Charcoal, sans-serif;
+}
+.page-header {
+    padding-bottom: 9px;
+    margin: 10px 0 ;
+    border-bottom: 1px solid #eee;
+}
+span.header{
+	font-weight:700;
+	font-size:30px;
+}
+.btn-warning{
+	margin-top:-5%;
+	height:30px;
+	background:  rgb(3,169,244);
+}
+.modalbtn{
+	display:none;
+}
+@media (min-width: 1200px){
+.container {
+    /* width: 1170px; */
+}
+}

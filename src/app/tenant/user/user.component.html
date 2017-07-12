@@ -1,0 +1,21 @@
+
+
+<div class="row">
+  <div class="col-md-6">	
+<app-user-item [users]="users" (userId)=userClicked($event) ></app-user-item>
+    <span *ngIf="userCreateClicked">
+    <app-user-create></app-user-create>
+    </span>
+    <button class="btn customBtn" data-toggle="modal" (click)="userCreateModalClicked()">
+ <span class="glyphicon glyphicon-plus"></span>
+</button>
+</div>
+    <div class="col-md-6">
+        <div *ngIf="userSelected">
+<app-user-detail [uid]="uid"></app-user-detail>
+</div>
+   <p-panel header="Title" [toggleable]="true">
+    Content
+</p-panel>
+    </div>
+    </div>    

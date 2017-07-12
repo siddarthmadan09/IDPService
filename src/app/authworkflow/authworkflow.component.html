@@ -1,0 +1,17 @@
+<app-authworkflow-create></app-authworkflow-create>
+<app-authworkflow-delete [id]="id"></app-authworkflow-delete>
+<div>
+<h6 class="label label-primary">Name</h6>
+<p>{{this.authworkFlowitem?.name}}<p>
+  </div>
+  <div>
+  <h6 class="label label-primary">description</h6>
+<p>{{this.authworkFlowitem?.description}}</p>
+</div>
+ <accordion>
+   <div *ngIf="authmethodconfig">
+<h4>WorkFlow</h4>
+<app-authmethodconfig-item *ngFor="let authmethodconfigitem of authmethodconfig" [authmethodconfig]="authmethodconfigitem"></app-authmethodconfig-item>
+
+</div>
+ </accordion>

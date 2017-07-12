@@ -1,0 +1,35 @@
+<div class="row">
+
+<input type="text" class="  search-query form-control" [(ngModel)]="userFilter.name" placeholder="name"/>
+
+
+                     
+
+
+</div>
+ 
+     
+	<app-tenant-item *ngFor="let tenant of tenants| filterBy: userFilter | paginate: { itemsPerPage: 4, currentPage: p }" [tenant]="tenant" (deleted)=deleteTenant($event) (clicked)=clickedTenant($event); ></app-tenant-item>
+
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<!--editTrue-->
+<!--<button type="button" class="btn btn-primary" (click)="staticModal.show()">Static modal</button>
+ 
+<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Static modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-tenant-edit [tenant]="tenant" ></app-tenant-edit>  
+      </div>
+    </div>
+</div>
+</div> -->

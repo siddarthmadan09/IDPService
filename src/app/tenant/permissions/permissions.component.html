@@ -1,0 +1,5 @@
+<app-permission-create></app-permission-create>
+<div>
+<app-permissions-item *ngFor="let permission of permissions| filterBy: userFilter | paginate: { itemsPerPage: 4, currentPage: p }" [permission]="permission"   ></app-permissions-item>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>  
+</div>

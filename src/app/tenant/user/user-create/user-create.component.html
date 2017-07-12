@@ -1,0 +1,97 @@
+<div class="modal fade userCreateModal" [hidden]="hideModal" id="create_tenant{{pk}}" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal_header_color">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create User</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row margin_both">
+          <div class="col-md-12">
+            <div class="row form-group text-center">
+              <span>Are you sure you want to Create!</span>
+            </div>
+            <div class="row form-group">
+              <div class="text-center">
+<h2>Create User Here</h2>
+<form [formGroup]="UserForm" class="form-horizontal editForm" (ngSubmit)="onSubmit(UserForm.value,$event)" >
+ 
+      <div class="form-group">
+        <label class="control-label col-md-2" for="username">UserName</label>
+        <div class="col-md-6">
+        <input type="text"   id="username" class="form-control"
+               formControlName="username"  >
+        
+          <div class="alert alert-danger" [hidden]="UserForm.controls.username.untouched || UserForm.controls.username.valid">Name is required and must be valid</div>
+          </div>
+       
+     </div> 
+   <div class="form-group">
+        <label class="control-label col-md-2" for="firstName">FirstName</label>
+        <div class="col-md-6">
+        <input type="text"   id="firstName" class="form-control"
+               formControlName="firstName"  >
+        
+         <div class="alert alert-danger" [hidden]="UserForm.controls.firstName.untouched || UserForm.controls.firstName.valid">firstName is required 
+         </div>
+         </div>
+      
+     </div>   
+     <div class="form-group">
+        <label class="control-label col-md-2" for="lastName">lastName</label>
+        <div class="col-md-6">
+        <input type="text"   id="lastName" class="form-control"
+               formControlName="lastName"  >
+        
+         <div class="alert alert-danger" [hidden]="UserForm.controls.lastName.untouched || UserForm.controls.lastName.valid">lastName is required 
+         </div>
+         </div>
+      
+     </div>
+      <div class="form-group ">
+        <label class="control-label col-md-2" for="email">EmailAddress</label>
+      <div class="col-md-6">
+        <input type="email" id="emailAdress" class="form-control"
+               formControlName="emailAddress"  >
+          <div class="alert alert-danger" [hidden]="UserForm.controls.emailAddress.untouched || UserForm.controls.emailAddress.valid">Email is required and must be valid</div>
+          </div>
+       
+      </div>
+        <div class="form-group ">
+        <label class="control-label col-md-2" for="phoneNumber">Phone Number</label>
+      <div class="col-md-6">
+        <input type="number" id="phoneNumber" class="form-control"
+               formControlName="phoneNumber"  >
+          <div class="alert alert-danger" [hidden]="UserForm.controls.phoneNumber.untouched || UserForm.controls.phoneNumber.valid">Email is required and must be valid</div>
+          </div>
+       
+      </div>
+
+      <div *ngIf="usergroups?.length;else nogroup">
+       <div class="form-group ">
+        <label class="control-label col-md-2" for="userGroups">userGroups</label>
+      <div class="col-md-6">
+       <span class="align-checkbox" *ngFor="let usergrp of usergroups" >
+               <input type="checkbox"  [value]="usergrp.id" 
+(change)="usergroupList[$event.target.getAttribute('value')]=$event.target.checked"/>{{usergrp.name}}
+           </span>
+         </div>
+      </div>
+      </div>
+ <ng-template #nogroup>no usergroups found</ng-template>
+  <div class="login-button">
+    <button  type="submit"  [disabled]='!UserForm.valid'>Save</button>
+    <button id="closeModalButton" [hidden]="true" data-dismiss="modal">Close modal</button>  
+  </div>
+</form>
+ 
+<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

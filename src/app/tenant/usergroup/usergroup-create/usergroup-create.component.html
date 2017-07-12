@@ -1,0 +1,70 @@
+<div class="modal fade usergroupCreateModal" [hidden]="hideModal" id="create_tenant{{pk}}" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal_header_color">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create Usergroups</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row margin_both">
+          <div class="col-md-12">
+            <div class="row form-group text-center">
+              <span>Are you sure you want to Create!</span>
+            </div>
+            <div class="row form-group">
+              <div class="text-center">
+<h2>Create User Here</h2>
+<form [formGroup]="UsergroupForm" class="form-horizontal editForm" (ngSubmit)="onSubmit(UsergroupForm.value,$event)" >
+ 
+      <div class="form-group">
+        <label class="control-label col-md-2" for="name">Name</label>
+        <div class="col-md-6">
+        <input type="text"   id="name" class="form-control"
+               formControlName="name"  >
+        
+          <div class="alert alert-danger" [hidden]="UsergroupForm.controls.name.untouched || UsergroupForm.controls.name.valid">Name is required and must be valid</div>
+          </div>
+       
+     </div> 
+   <div class="form-group">
+        <label class="control-label col-md-2" for="description">Description</label>
+        <div class="col-md-6">
+        <input type="text"   id="description" class="form-control"
+               formControlName="description"  >
+        
+         <div class="alert alert-danger" [hidden]="UsergroupForm.controls.description.untouched || UsergroupForm.controls.description.valid">firstName is required 
+         </div>
+         </div>
+      
+     </div>   
+   
+    
+
+      <div *ngIf="permissions?.length;else nogroup">
+       <div class="form-group ">
+        <label class="control-label col-md-2" for="userGroups">Permissions</label>
+      <div class="col-md-6">
+       <span class="align-checkbox" *ngFor="let permission of permissions" >
+               <input type="checkbox"  [value]="permission?.id" 
+(change)="Selectedpermissions[$event.target.getAttribute('value')]=$event.target.checked"/>{{permission?.name}}
+           </span>
+         </div>
+      </div>
+      </div>
+ <ng-template #nogroup>no Permissions found</ng-template>
+  <div class="login-button">
+    <button  type="submit"  [disabled]='!UsergroupForm.valid'>Save</button>
+    
+  </div>
+</form>
+ 
+<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

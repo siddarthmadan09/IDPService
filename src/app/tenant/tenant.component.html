@@ -1,0 +1,47 @@
+<div class="row">
+<div  *ngIf="tenantNotClicked; else loading">
+<div class="col-sm-3 col-md-3 " >
+<div class="page-header menu-header" >
+
+  <span class="header">Tenants List&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  
+  <span *ngIf="createModalClicked">
+ <app-tenant-create (modalCloseOnCancel)=closeModalonCancel() ></app-tenant-create>
+</span>
+
+<button class="btn openModal" (click)="modalClicked()" >
+ <span class="glyphicon glyphicon-plus"></span>
+</button>
+</div>
+			<app-tenant-list (clicked)=clickedTenant($event) (tenantCreated)=closeModalOnSave($event)></app-tenant-list>
+			<div style="width:100px;height:200px" [@divState]="state">good mronigng</div>
+		</div>
+		
+	</div>
+	<ng-template #loading>
+<div class="col-sm-1 col-md-1 ">
+<div class="page-header menu-header" >
+  <button class="btn btn-warning" (click)="clickedTenant()">ChangeTenant</button>
+</div>
+</div>
+</ng-template>
+</div>	
+
+		
+	
+
+
+		
+	<!--	<div class="col-sm-6">
+		 <div class="createTenant" *ngIf="createTenant">
+			<app-tenant-create (created)="pushTenant($event)"></app-tenant-create>
+			</div>
+	
+<div *ngIf="editTenant">
+			<div class="col-sm-4">
+			<app-tenant-edit></app-tenant-edit>
+			</div>
+		</div>
+	</div>
+</div>
+</div>-->

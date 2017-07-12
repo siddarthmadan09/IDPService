@@ -1,0 +1,32 @@
+
+
+                           
+<div class="profile-head">
+
+<div class="col-md-4 col-sm-4 col-xs-12">
+<span *ngIf="editModalClicked">
+	<app-tenant-edit [tenant]="tenant" [pk]="id"></app-tenant-edit>
+</span>
+<button class="ui-button-success customBtn btn" pButton icon="fa-edit" iconPos="left" type="button" (click)="editTenant()" label="edit">
+</button>
+
+	<span *ngIf="deleteTenantClicked">
+	<app-tenant-delete  [del]="id"></app-tenant-delete>
+	</span>
+	<button class="btn customBtn ui-button-danger" pButton data-toggle="modal"  (click)="deleteTenant()" label="Delete" icon="fa-trash" iconPos="left" ></button>
+<h5>Tenant Details</h5>
+<h6>{{tenant?.name}}</h6>
+</div><!--col-md-4 col-sm-4 col-xs-12 close-->
+
+
+<div class="col-md-8 col-sm-5 col-xs-12">
+<ul>
+<li><span class="label label-primary">EmailAddress</span> {{tenant?.emailAddress}}</li> 
+                        <li> <span class="label label-primary">description</span> {{tenant?.description}}</li> 
+</ul>
+</div><!--col-md-8 col-sm-8 col-xs-12 close-->
+
+
+
+
+</div><!--profile-head close-->

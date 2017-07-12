@@ -1,0 +1,30 @@
+ <div class="container" style="margin:10px 0px;">
+ 	<app-tenant-edit [tenant]="tenant" [pk]="id"></app-tenant-edit>
+
+<app-tenant-detail [id]="id"></app-tenant-detail> 
+
+</div>
+<div class="menuContainer" >
+
+
+        <nav class="sidebar-nav  ">
+            <div class="navbar" role="navigation">
+       
+                <ul class="nav navbar-nav menu" >
+                	<li><a  role="button" (click)="navigateUser()" ><p class="btn-enter">User</p></a></li>
+                 <li><a [routerLink]="['/userGroup']" [queryParams]="{ tenantId:id }"> usergroups</a></li>
+
+                 <li><a  role="button" (click)="navigatePermission()" ><p class="btn-enter">Permissions</p></a></li>
+                 
+                  <li><a routerLink="./roles" routerLinkActive="active">Roles</a></li>
+                  <li><a href="#">WorkFlow</a></li>
+                  <li><a href="#">Auth Methods</a></li>
+                  
+               </ul>
+            </div>
+        </nav>
+
+  </div> 
+<div>
+     	<router-outlet></router-outlet>
+     </div>

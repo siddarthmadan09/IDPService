@@ -1,0 +1,11 @@
+@media (min-width: 1200px)
+{
+.container {
+    width: 1170px;
+    padding: 15px;
+}
+}
+.btn-custom{
+    background-color: rgb(244, 67, 54);
+    border-color: rgb(244, 67, 54);
+}
